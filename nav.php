@@ -1,3 +1,8 @@
+<?php
+    require 'config/database.php'
+?>
+
+
 <nav class="nav">
     <ul class="list">
 
@@ -17,13 +22,33 @@
             <ul class="list__show">
                 <li class="list__inside">
                     <img src="assets/icons/male.svg" alt="">
+                    <a href="index.php" class="nav__link nav__link--inside">Todos</a>
+                </li>
+                <?php
+                $query = "SELECT * FROM categorias";
+                $res = $conn->query($query);
+                while($row = $res->fetch_assoc()){
+                ?>
+                <li class="list__inside">
+                    
+                    <a href="?categoria=<?php echo $row["id"] ?>" class="nav__link nav__link--inside"><?php echo $row["categoria"] ?></a>
+                </li>
+                <?php
+                }
+                $conn->close();
+                ?>
+
+
+
+                <!-- <li class="list__inside">
+                    <img src="assets/icons/male.svg" alt="">
                     <a href="#" class="nav__link nav__link--inside">Hombre</a>
                 </li>
 
                 <li class="list__inside">
                     <img src="assets/icons/female.svg" alt="">
                     <a href="#" class="nav__link nav__link--inside">Mujer</a>
-                </li>
+                </li> -->
             </ul>
         </li>
 
