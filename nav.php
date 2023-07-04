@@ -21,7 +21,7 @@
             </div>
             <ul class="list__show">
                 <li class="list__inside">
-                    <img src="assets/icons/male.svg" alt="">
+                    <img src="assets/icons/diamod.svg" alt="">
                     <a href="index.php" class="nav__link nav__link--inside">Todos</a>
                 </li>
                 <?php
@@ -30,7 +30,12 @@
                 while($row = $res->fetch_assoc()){
                 ?>
                 <li class="list__inside">
-                    
+                    <?php 
+                    $imagen = $row["icono"];
+                    $data_uri = 'data:image/svg+xml;base64,' . base64_encode($imagen); 
+                    ?>
+
+                    <img src="<?php echo $data_uri ?>" alt="">
                     <a href="?categoria=<?php echo $row["id"] ?>" class="nav__link nav__link--inside"><?php echo $row["categoria"] ?></a>
                 </li>
                 <?php
