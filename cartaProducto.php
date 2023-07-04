@@ -22,7 +22,7 @@
             <div class="card__text">
                 <h3><?php echo $row["nombre"]; ?></h3>
                 <p><?php echo $row["descripcion"] ?></p>
-                <p><?php echo $row ["precio"] ?></p>
+                <p><?php echo $row ["precio"].'$' ?></p>
             </div>
         </div>
         <?php
