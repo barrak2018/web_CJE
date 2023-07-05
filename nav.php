@@ -9,7 +9,7 @@
         <li class="list__item">
             <div class="list__button">
                 <img src="assets/icons/menu.svg" class="list__img">
-                <a href="#" class="nav__link">Inicio</a>
+                <a href="?page=home" class="nav__link">Inicio</a>
             </div>
         </li>
 
@@ -22,7 +22,7 @@
             <ul class="list__show">
                 <li class="list__inside">
                     <img src="assets/icons/diamod.svg" alt="">
-                    <a href="index.php" class="nav__link nav__link--inside">Todos</a>
+                    <a href="index.php?page=catalog" class="nav__link nav__link--inside">Todos</a>
                 </li>
                 <?php
                 $query = "SELECT * FROM categorias";
@@ -36,7 +36,7 @@
                     ?>
 
                     <img src="<?php echo $data_uri ?>" alt="">
-                    <a href="?categoria=<?php echo $row["id"] ?>" class="nav__link nav__link--inside"><?php echo $row["categoria"] ?></a>
+                    <a href="?categoria=<?php echo $row["id"] ?>&page=catalog" class="nav__link nav__link--inside"><?php echo $row["categoria"] ?></a>
                 </li>
                 <?php
                 }

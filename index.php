@@ -17,12 +17,23 @@
 
 
 
-        <div class="shop">
+        
             
-            <?php
-            require './cartaProducto.php'
-            ?>
-        </div>
+        <?php
+
+        if (isset($_GET['page'])) {
+            if ($_GET['page'] == 'home') {
+                require 'home.php';
+            }
+            elseif ($_GET['page'] == 'catalog') {
+                require 'cartaProducto.php';
+            }
+        } else {
+            require 'home.php';
+        }
+
+        ?>
+        
 
     </div>
 

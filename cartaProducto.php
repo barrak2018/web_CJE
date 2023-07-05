@@ -1,4 +1,4 @@
-
+<div class="shop">
     <?php
     require './config/database.php';
 
@@ -30,3 +30,4 @@
     };
     $conn->close();
     ?>
+</div>
